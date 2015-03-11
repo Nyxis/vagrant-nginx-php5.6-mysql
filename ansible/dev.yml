@@ -1,0 +1,19 @@
+- hosts: local
+  sudo: yes
+  roles:
+    - common
+    - java
+    - nginx
+    - php
+    # - hhvm
+    - mysql
+    - nodejs
+    - elastic
+    - rabbitmq
+    - redis
+    - development
+    - projects
+  vars_files:
+    - group_vars/dev.yml
+    - group_vars/dev.sir.yml
+    - group_vars/dev.local.yml

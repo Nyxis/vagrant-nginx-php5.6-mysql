@@ -1,0 +1,14 @@
+sites:
+  - { name: 'sir', docroot: '/var/www/sir/web', server_name: '*.sir.dev' }
+
+mysql:
+  databases:
+    - { name: 'sir' }
+
+  users:
+    - { name: 'sir', host: '%' }
+
+  bind_address: 0.0.0.0
+
+projects:
+  - { name: 'sir', repo: 'git@github.com:LinkValue/SiR.git' }

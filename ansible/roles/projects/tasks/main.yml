@@ -1,0 +1,17 @@
+- name: Copy SSH private key
+  sudo: no
+  copy: src={{ ssh_key }} dest=~/.ssh/id_rsa mode=600
+
+- name: SSH configuration
+  sudo: no
+  template: src=ssh/config.j2 dest=~/.ssh/config
+
+# - name: Ensures git repositories are present
+#   sudo: no
+#   git: repo={{ item.repo }} dest=/var/www/{{ item.name }} update=no key_file=/home/vagrant/.ssh/gitlab.pem accept_hostkey=true
+#   with_items: projects
+
+# - name: Install composer vendors
+#   shell: ./scripts/composer.sh install chdir=/var/www/{{ item.name }}
+#   with_items: projects
+

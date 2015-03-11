@@ -1,0 +1,37 @@
+- name: Commmon | Update repository
+  action: command /usr/bin/apt-get update
+
+- name: Set TZ config file
+  template:
+    src=timezone.j2
+    dest=/etc/timezone
+  register: tz_result
+
+- name: Set .bash_aliases file
+  template:
+    src=bash_aliases.j2
+    dest=~/.bash_aliases
+
+# - name: Common | Reconfigure TZ
+#   command: dpkg-reconfigure tzdata
+#   when: tz_result.changed
+
+# - name: Configure language packs
+#   command: locale-gen fr_FR fr_FR.UTF-8 && dpkg-reconfigure locales
+
+- name: install common packages
+  action: apt pkg={{item}} state=installed
+  with_items:
+    - language-pack-fr
+    - build-essential
+    - vim
+    - zsh
+    - acl
+    - curl
+    - python-pycurl
+    - git
+    - mysql-client
+    - python-mysqldb
+    - unzip
+    - wget
+    - ntp

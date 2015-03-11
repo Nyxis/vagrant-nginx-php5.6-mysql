@@ -1,0 +1,7 @@
+.vagrant
+.vagrant.*
+.DS_Store
+*.sublime-*
+*~
+.idea
+ansible/group_vars/dev.local.yml

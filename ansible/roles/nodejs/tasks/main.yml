@@ -1,0 +1,12 @@
+---
+  - name: Add chris-lea/node.js ppa
+    action: apt_repository repo=ppa:chris-lea/node.js state=present
+
+  - name: Install node.js
+    action: apt name=nodejs state=installed
+
+  - name: Install npm packages
+    npm: name={{item}} global=yes
+    with_items:
+      - bower
+      - grunt-cli
