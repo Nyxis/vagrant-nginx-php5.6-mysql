@@ -5,12 +5,13 @@
     - java
     - nginx
     - php
-    # - hhvm
+    - hhvm
     - mysql
     - nodejs
     - elastic
     - rabbitmq
     - redis
+    - neo4j
     - development
     - projects
   vars_files:

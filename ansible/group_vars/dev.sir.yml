@@ -1,5 +1,5 @@
 sites:
-  - { name: 'sir', docroot: '/var/www/sir/web', server_name: '*.sir.dev' }
+  - { name: 'sir', docroot: '/var/www/SiR/web', server_name: '*.sir.dev' }
 
 mysql:
   databases:
@@ -11,4 +11,4 @@ mysql:
   bind_address: 0.0.0.0
 
 projects:
-  - { name: 'sir', repo: 'git@github.com:LinkValue/SiR.git' }
+  - { name: 'SiR', repo: 'git@github.com:LinkValue/SiR.git' }
