@@ -27,8 +27,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         local.vm.network :forwarded_port, guest: 22, host: 2222, id: "ssh", disabled: true
         local.vm.network :forwarded_port, guest: 22, host: 2230, auto_correct: true
 
-        local.vm.synced_folder ".", "/vagrant", type: "nfs"
-        local.vm.synced_folder "..", "/var/www", type: "nfs"
+        local.vm.synced_folder ".", "/vagrant", id:"vagrant-root", type: "nfs", mount_options: ["nolock,vers=3,udp,noatime,actimeo=1"]
+        local.vm.synced_folder "..", "/var/www/", id:"vagrant-root", type: "nfs", mount_options: ["nolock,vers=3,udp,noatime,actimeo=1"]
     end
 
     # Update the server

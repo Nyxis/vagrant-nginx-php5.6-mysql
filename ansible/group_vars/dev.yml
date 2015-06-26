@@ -9,3 +9,18 @@ neo4j_package: neo4j
 neo4j_package_version: 2.1.7
 
 php_memory_limit: 2G
+
+sites:
+  - { name: 'sir', docroot: '/var/www/SiR/web', server_name: '*.sir.dev' }
+
+mysql:
+  databases:
+    - { name: 'sir' }
+
+  users:
+    - { name: 'sir', host: '%' }
+
+  bind_address: 0.0.0.0
+
+projects:
+  - { name: 'SiR', repo: 'git@github.com:LinkValue/SiR.git' }

@@ -16,5 +16,4 @@
     - projects
   vars_files:
     - group_vars/dev.yml
-    - group_vars/dev.sir.yml
     - group_vars/dev.local.yml
