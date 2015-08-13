@@ -10,3 +10,4 @@
     with_items:
       - bower
       - grunt-cli
+      - gulp
